@@ -3,6 +3,9 @@ import sveltePreprocess from 'svelte-preprocess';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
+
+const dev = process.argv.includes('dev');
+
 const config = {
   preprocess: sveltePreprocess({
     postcss: true
@@ -13,7 +16,7 @@ const config = {
     }),
 
     paths: {
-      base: process.argv.includes('dev') ? 'rapid-redirect' : process.env.BASE_PATH
+      base: dev ? '' : '/rapid-redirect'  // Change "rapid-redirect" to match your GitHub repo name
     }
   }
 };
