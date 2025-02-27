@@ -13,7 +13,7 @@ const config = {
     }),
 
     paths: {
-      base: process.argv.includes('dev') ? '/rapid-redirect.io' : process.env.BASE_PATH
+      base: process.argv.includes('dev') ? 'rapid-redirect' : process.env.BASE_PATH
     }
   }
 };

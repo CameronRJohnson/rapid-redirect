@@ -8,7 +8,6 @@
   let copiedId: number | null = null;
   let sortBy = "name"; // Default sorting column
   let sortOrder = "asc"; // Default order
-  export const prerender = true;
 
   function generateRandomString(length: number) {
     const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
