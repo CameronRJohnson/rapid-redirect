@@ -16,7 +16,7 @@ const config = {
     }),
 
     paths: {
-      base: dev ? '' : '/rapid-redirect'  // Change "rapid-redirect" to match your GitHub repo name
+      base: dev ? 'rapid-redirect' : 'rapid-redirect'
     }
   }
 };
