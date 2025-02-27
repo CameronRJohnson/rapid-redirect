@@ -1,24 +1,15 @@
 import adapter from '@sveltejs/adapter-static';
-import sveltePreprocess from 'svelte-preprocess';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-/** @type {import('@sveltejs/kit').Config} */
-
-const dev = process.argv.includes('dev');
-
-const config = {
-  preprocess: sveltePreprocess({
-    postcss: true
-  }),
+export default {
   kit: {
     adapter: adapter({
-      fallback: '404.html'
+      fallback: 'index.html' // Enables client-side routing for dynamic pages
     }),
-
     paths: {
-      base: dev ? 'rapid-redirect' : 'rapid-redirect'
-    }
+      base: process.env.NODE_ENV === 'production' ? '/rapid-redirect' : '',
+    },
+    prerender: {
+      entries: ['*'],
+    },
   }
 };
-
-export default config;
