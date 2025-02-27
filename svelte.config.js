@@ -6,7 +6,7 @@ export default {
       fallback: 'index.html' // Enables client-side routing for dynamic pages
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/rapid-redirect' : '',
+      base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
     },
     prerender: {
       entries: ['*'],
